@@ -4,294 +4,401 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Advocate Sudheer Reddy | Top Lawyer in Nellore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-    --primary: #0f172a;
-    --secondary: #8B0000;
-    --light: #ffffff;
-    --gray: #f5f5f5;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
-    scroll-behavior: smooth;
-}
-
-body {
-    color: #333;
-}
-
-/* NAV */
-nav {
-    position: fixed;
-    width: 100%;
-    padding: 1.2rem 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(6px);
-    z-index: 1000;
-}
-
-.logo {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.nav-links a {
-    color: white;
-    margin-left: 2rem;
-    text-decoration: none;
-    position: relative;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: white;
-    left: 0;
-    bottom: -4px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* HERO */
-.hero {
-    height: 100vh;
-    background: url('./hero-sudddeee.jpg') no-repeat center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 8%;
-    position: relative;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
-}
-
-.hero-content {
-    position: relative;
-    max-width: 600px;
-    color: white;
-    animation: fadeUp 1s ease;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-}
-
-.hero span {
-    color: #e74c3c;
-}
-
-.hero p {
-    margin-bottom: 2rem;
-    color: #ddd;
-}
-
-.btn {
-    padding: 14px 35px;
-    background: var(--secondary);
-    color: white;
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    background: #ffffff;
-}
-
-/* SECTION */
-section {
-    padding: 5rem 8%;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 3rem;
-}
-
-/* SERVICES */
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 2rem;
-}
-
-.card {
-    padding: 2rem;
-    background: white;
-    border-radius: 10px;
-    transition: 0.3s;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card h3 {
-    margin-bottom: 1rem;
-}
-
-/* ABOUT */
-.flex {
-    display: flex;
-    gap: 3rem;
-    align-items: center;
-}
-
-.flex img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* FORM */
-.form-box {
-    max-width: 700px;
-    margin: auto;
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 1rem;
-}
-
-/* FOOTER */
-footer {
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-}
-
-/* ANIMATION */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* MOBILE */
-@media(max-width:768px){
-    .nav-links {display:none;}
-
-    .hero {
-        justify-content: center;
-        text-align: center;
+    :root {
+        --primary-blue: #003380; /* Matching the reference blue */
+        --light-bg: #f8f9fa;
+        --text-dark: #1a1a1a;
+        --text-light: #ffffff;
+        --accent: #e0e0e0;
     }
 
-    .flex {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+    body, html {
+        height: 100%;
+        overflow: hidden; /* Hide main scrollbar */
+        background-color: var(--primary-blue);
+    }
+
+    /* Fixed Top Navigation */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 2rem 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        pointer-events: none; /* Let clicks pass through where there are no links */
+    }
+
+    .logo {
+        color: var(--text-light);
+        font-size: 1.5rem;
+        font-weight: 700;
+        pointer-events: auto;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .menu-icon {
+        color: var(--text-light);
+        font-size: 1.5rem;
+        cursor: pointer;
+        pointer-events: auto;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    /* Side Navigation Dots */
+    .side-nav {
+        position: fixed;
+        right: 4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+        display: flex;
         flex-direction: column;
+        gap: 2rem;
+        pointer-events: auto;
     }
 
-    .hero h1 {
-        font-size: 2.2rem;
+    .nav-dot-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+        cursor: pointer;
+        group;
     }
-}
+
+    .nav-label {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.85rem;
+        font-weight: 400;
+        opacity: 0;
+        transform: translateX(10px);
+        transition: all 0.3s ease;
+    }
+
+    .nav-dot-container:hover .nav-label,
+    .nav-dot-container.active .nav-label {
+        opacity: 1;
+        transform: translateX(0);
+        color: var(--text-light);
+    }
+
+    .nav-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .nav-dot-container.active .nav-dot {
+        background-color: var(--text-light);
+        border-color: var(--text-light);
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Scroll Snapping Container */
+    .scroll-container {
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none; /* Firefox */
+    }
+    .scroll-container::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+
+    /* Section Layout */
+    .section {
+        height: 100vh;
+        width: 100vw;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        display: flex;
+        position: relative;
+    }
+
+    /* Split Screen Setup */
+    .content-half {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 6rem;
+        z-index: 2;
+    }
+
+    .image-half {
+        width: 50%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    /* Alternating Colors for Sections */
+    #home .content-half { background-color: var(--light-bg); color: var(--primary-blue); }
+    #home .logo, #home .menu-icon, #home .nav-label, #home .nav-dot { color: var(--primary-blue); border-color: var(--primary-blue); }
+    
+    #about .content-half { background-color: var(--primary-blue); color: var(--text-light); }
+    #practice .content-half { background-color: var(--light-bg); color: var(--primary-blue); }
+    #contact .content-half { background-color: var(--primary-blue); color: var(--text-light); }
+
+    /* Typography */
+    .subtitle {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        color: inherit;
+        opacity: 0.9;
+    }
+
+    h1 {
+        font-size: 4rem;
+        line-height: 1.1;
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 3rem;
+        max-width: 90%;
+        opacity: 0.85;
+    }
+
+    /* Outline Buttons */
+    .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 24px;
+        border: 1px solid currentColor;
+        color: inherit;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        background: transparent;
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    .btn-outline:hover {
+        background: currentColor;
+        color: var(--light-bg); /* Inverse color */
+    }
+    
+    #about .btn-outline:hover, #contact .btn-outline:hover {
+        color: var(--primary-blue);
+    }
+
+    .btn-outline span {
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .btn-outline:hover span {
+        transform: translateX(5px);
+    }
+
+    /* Form Styling */
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .contact-form input, .contact-form select, .contact-form textarea {
+        width: 100%;
+        padding: 12px 0;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+        color: white;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    .contact-form input::placeholder, .contact-form textarea::placeholder {
+        color: rgba(255,255,255,0.6);
+    }
+
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+        border-bottom-color: white;
+    }
+    
+    .contact-form select {
+        color: rgba(255,255,255,0.6);
+    }
+    .contact-form select option {
+        color: black;
+    }
+
+    /* Mobile Responsiveness */
+    @media(max-width: 900px) {
+        .section { flex-direction: column; }
+        .content-half { width: 100%; height: 60%; padding: 3rem 2rem; justify-content: center; }
+        .image-half { width: 100%; height: 40%; }
+        h1 { font-size: 2.5rem; }
+        .side-nav { display: none; }
+        nav { padding: 1.5rem 2rem; background: rgba(0,51,128,0.9); }
+        #home .logo, #home .menu-icon { color: white; }
+    }
 </style>
 </head>
-
 <body>
 
 <nav>
     <div class="logo">Sudheer Reddy</div>
-    <div class="nav-links">
-        <a href="#appointment">Appointment</a>
-        <a href="#about">About</a>
-        <a href="#services">Practice</a>
+    <div class="menu-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
     </div>
 </nav>
 
-<header class="hero">
-    <div class="hero-content">
-        <h1><br><span></span></h1>
-        <p>Defending your rights with authority in Nellore.</p>
-        <a href="#appointment" class="btn">Consult Now</a>
+<div class="side-nav">
+    <div class="nav-dot-container active" onclick="scrollToSection('home')">
+        <span class="nav-label">Introduction</span>
+        <div class="nav-dot"></div>
     </div>
-</header>
-
-<section id="about">
-    <div class="flex">
-        <div>
-            <h2>About Advocate</h2>
-            <p>Advocate Sudheer Reddy is known for strong courtroom presence and legal expertise in criminal and civil law.</p>
-        </div>
-        <div>
-            <img src="./hero-sudddeee.jpg" alt="">
-        </div>
+    <div class="nav-dot-container" onclick="scrollToSection('about')">
+        <span class="nav-label">Legacy</span>
+        <div class="nav-dot"></div>
     </div>
-</section>
-
-<section id="services">
-    <h2 class="section-title">Practice Areas</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Criminal Law</h3>
-            <p>Strong defense in criminal cases.</p>
-        </div>
-        <div class="card">
-            <h3>Civil Cases</h3>
-            <p>Handling disputes and litigation.</p>
-        </div>
-        <div class="card">
-            <h3>Property Law</h3>
-            <p>Land and property legal support.</p>
-        </div>
+    <div class="nav-dot-container" onclick="scrollToSection('practice')">
+        <span class="nav-label">Expertise</span>
+        <div class="nav-dot"></div>
     </div>
-</section>
-
-<section id="appointment">
-    <h2 class="section-title">Book Appointment</h2>
-    <div class="form-box">
-        <form onsubmit="event.preventDefault(); alert('Appointment Request Sent');">
-            <input type="text" placeholder="Full Name" required>
-            <input type="tel" placeholder="Phone" required>
-            <input type="date" required>
-            <select required>
-                <option>Select Case Type</option>
-                <option>Criminal</option>
-                <option>Civil</option>
-            </select>
-            <textarea placeholder="Describe your case"></textarea>
-            <button class="btn">Submit</button>
-        </form>
+    <div class="nav-dot-container" onclick="scrollToSection('contact')">
+        <span class="nav-label">Consultation</span>
+        <div class="nav-dot"></div>
     </div>
-</section>
+</div>
 
-<footer>
-    <p>© 2026 Advocate Sudheer Reddy</p>
-</footer>
+<main class="scroll-container">
+    
+    <section class="section" id="home">
+        <div class="content-half">
+            <h2 class="subtitle">Introduction</h2>
+            <h1>Defending your rights with authority.</h1>
+            <p>Based in Nellore, Advocate Sudheer Reddy provides robust legal representation. Backed by years of courtroom experience, we deliver nuanced, strategic solutions for our clients.</p>
+            <a href="#contact" class="btn-outline" onclick="scrollToSection('contact'); return false;">Consult Now <span>→</span></a>
+        </div>
+        <div class="image-half" style="background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop');"></div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="content-half">
+            <h2 class="subtitle">Legacy</h2>
+            <h1>Shaping local legal outcomes.</h1>
+            <p>Our pillars of success are grounded in strong courtroom presence and unwavering ethical standards. We are driven to create meaningful, long-term impact for individuals and businesses navigating the complexities of civil and criminal law.</p>
+            <a href="#practice" class="btn-outline" onclick="scrollToSection('practice'); return false;">Explore Practice Areas <span>→</span></a>
+        </div>
+        <div class="image-half" style="background-image: url('https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?q=80&w=2000&auto=format&fit=crop');"></div>
+    </section>
+
+    <section class="section" id="practice">
+        <div class="content-half">
+            <h2 class="subtitle">Expertise</h2>
+            <h1>Comprehensive legal solutions.</h1>
+            <p>We handle diverse and nuanced legal needs. From robust defense in criminal proceedings to strategic litigation in civil disputes and meticulous handling of property and land affairs.</p>
+            <a href="#contact" class="btn-outline" onclick="scrollToSection('contact'); return false;">Book Appointment <span>→</span></a>
+        </div>
+        <div class="image-half" style="background-image: url('https://images.unsplash.com/photo-1505664173695-1f37e4244b20?q=80&w=2000&auto=format&fit=crop');"></div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="content-half">
+            <h2 class="subtitle">Consultation</h2>
+            <h1>Secure your representation.</h1>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Appointment Request Sent');">
+                <input type="text" placeholder="Full Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="" disabled selected>Select Case Type</option>
+                    <option value="criminal">Criminal Law</option>
+                    <option value="civil">Civil Case</option>
+                    <option value="property">Property Dispute</option>
+                </select>
+                <textarea rows="3" placeholder="Briefly describe your case..."></textarea>
+                <button type="submit" class="btn-outline" style="margin-top: 1rem;">Submit Request <span>→</span></button>
+            </form>
+        </div>
+        <div class="image-half" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2000&auto=format&fit=crop');"></div>
+    </section>
+
+</main>
+
+<script>
+    // Handle smooth scrolling from side nav
+    function scrollToSection(id) {
+        const element = document.getElementById(id);
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Update active dot based on scroll position using Intersection Observer
+    const sections = document.querySelectorAll('.section');
+    const navDots = document.querySelectorAll('.nav-dot-container');
+
+    const observerOptions = {
+        root: document.querySelector('.scroll-container'),
+        threshold: 0.5 // Trigger when 50% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Remove active class from all dots
+                navDots.forEach(dot => dot.classList.remove('active'));
+                
+                // Find the index of the intersecting section and add active to corresponding dot
+                const index = Array.from(sections).indexOf(entry.target);
+                if(navDots[index]) {
+                    navDots[index].classList.add('active');
+                }
+
+                // Optional: Adjust top nav color based on section background
+                const nav = document.querySelector('nav');
+                if (entry.target.id === 'home' || entry.target.id === 'practice') {
+                    nav.style.color = 'var(--primary-blue)';
+                    document.querySelectorAll('.logo, .menu-icon').forEach(el => el.style.color = 'var(--primary-blue)');
+                } else {
+                    nav.style.color = 'var(--text-light)';
+                    document.querySelectorAll('.logo, .menu-icon').forEach(el => el.style.color = 'var(--text-light)');
+                }
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
 
 </body>
 </html>
